@@ -18,6 +18,41 @@ mainNav?.querySelectorAll("a").forEach((link) => {
 
 const apparelFilters = document.querySelector(".apparel-filters");
 const apparelCards = document.querySelectorAll(".apparel-card");
+const apparelSizeSelects = document.querySelectorAll(".apparel-size-select");
+
+apparelSizeSelects.forEach((select) => {
+  const shopLink = select.closest(".apparel-size-control").querySelector("[data-size-link]");
+
+  select.addEventListener("change", () => {
+    const variantId = select.value;
+    const productUrl = new URL(select.dataset.productUrl);
+    const selectedSize = select.options[select.selectedIndex].textContent;
+
+    shopLink.setAttribute("aria-disabled", String(!variantId));
+    if (!variantId) {
+      shopLink.href = productUrl.toString();
+      shopLink.textContent = "Choose size";
+      return;
+    }
+
+    if (select.dataset.sizeMode === "collection") {
+      productUrl.searchParams.set("filter.v.option.size", selectedSize);
+      shopLink.href = productUrl.toString();
+      shopLink.textContent = `${shopLink.dataset.shopLabel} size ${selectedSize} ↗`;
+      return;
+    }
+
+    productUrl.searchParams.set("variant", variantId);
+    shopLink.href = productUrl.toString();
+    shopLink.textContent = `${shopLink.dataset.shopLabel} · ${selectedSize} ↗`;
+  });
+
+  shopLink.addEventListener("click", (event) => {
+    if (shopLink.getAttribute("aria-disabled") === "true") {
+      event.preventDefault();
+    }
+  });
+});
 
 apparelFilters?.addEventListener("click", (event) => {
   const selectedFilter = event.target.closest("[data-filter]");

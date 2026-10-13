@@ -87,7 +87,7 @@
     <section class="apparel" id="apparel" aria-labelledby="apparel-title">
       <div class="apparel-inner section-wrap">
         <div class="section-heading"><span class="eyebrow">04 / THE WOMEN'S TRAINING EDIT</span><span class="heading-aside">A CURATED LOOK AT BOMBSHELL SPORTSWEAR.<br>GOOD GEAR FOR YOUR KIND OF MOVEMENT.</span></div>
-        <div class="apparel-intro"><div><h2 id="apparel-title">Made to move.<br><span>Made to be yours.</span></h2><p>Supportive layers, one-piece favorites, and matching sets worth showing up for.</p></div><a class="apparel-source" href="https://www.bombshellsportswear.com/collections/all" target="_blank" rel="noopener noreferrer">SHOP BOMBSHELL SPORTSWEAR <span aria-hidden="true">↗</span></a></div>
+        <div class="apparel-intro"><div><h2 id="apparel-title">Made to move.<br><span>Made to be yours.</span></h2><p>Supportive layers, one-piece favorites, and matching sets worth showing up for.</p><span class="apparel-currency">UK PRICES IN GBP (£)</span></div><a class="apparel-source" href="https://www.bombshellsportswear.com/collections/all" target="_blank" rel="noopener noreferrer">SHOP BOMBSHELL SPORTSWEAR <span aria-hidden="true">↗</span></a></div>
         <div class="apparel-filters" role="group" aria-label="Filter apparel by category">
           <button class="apparel-filter is-active" type="button" data-filter="all" aria-pressed="true">All pieces</button>
           {% for key, label in apparel_categories %}<button class="apparel-filter" type="button" data-filter="{{ key }}" aria-pressed="false">{{ label }}</button>{% endfor %}
@@ -96,15 +96,29 @@
           {% for product in apparel_products %}
           <article class="apparel-card" data-category="{{ product.category }}">
             <a class="apparel-image-link" href="{{ product.url }}" target="_blank" rel="noopener noreferrer" aria-label="Shop {{ product.name }} at Bombshell Sportswear, opens in a new tab">
-              <img src="{{ product.image }}" alt="{{ product.image_alt }}" loading="lazy" decoding="async">
+              <img src="{% static product.image %}" alt="{{ product.image_alt }}" loading="lazy" decoding="async">
               <span class="apparel-tag">{{ product.category_label }}</span>
               <span class="apparel-image-arrow" aria-hidden="true">↗</span>
             </a>
-            <div class="apparel-product-info"><div><h3>{{ product.name }}</h3><p>{{ product.color }}</p>{% if product.detail %}<p class="apparel-detail">{{ product.detail }}</p>{% endif %}</div><span class="apparel-price">{{ product.price }}</span></div>
+            <div class="apparel-card-copy">
+              <div class="apparel-product-info"><div><h3>{{ product.name }}</h3><p>{{ product.color }}</p></div><span class="apparel-price">{{ product.price }}</span></div>
+              <p class="apparel-description">{{ product.description }}</p>
+              {% if product.collection_only %}
+              <div class="apparel-sizes"><label for="apparel-size-{{ forloop.counter }}">Filter collection by size</label><div class="apparel-size-control"><select id="apparel-size-{{ forloop.counter }}" class="apparel-size-select" data-size-mode="collection" data-product-url="{{ product.url }}" aria-label="Choose a size to browse {{ product.category_label|lower }}"><option value="" selected>Choose size</option>{% for size in product.size_options %}<option value="{{ size }}">{{ size }}</option>{% endfor %}</select><a class="apparel-shop-size" href="{{ product.url }}" target="_blank" rel="noopener noreferrer" data-size-link data-shop-label="Browse collection" aria-disabled="true">Choose size</a></div></div>
+              {% elif product.components %}
+              <div class="apparel-sizes apparel-sizes-paired">
+                {% for component_name, component_url, component_sizes in product.components %}
+                <div class="apparel-size-group"><label for="apparel-size-{{ forloop.parentloop.counter }}-{{ forloop.counter }}">{{ component_name }} size</label><div class="apparel-size-control"><select id="apparel-size-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" class="apparel-size-select" data-product-url="{{ component_url }}" aria-label="Choose {{ component_name }} size for {{ product.color }} set"><option value="" selected>Choose size</option>{% for size, variant_id in component_sizes %}<option value="{{ variant_id }}">{{ size }}</option>{% endfor %}</select><a class="apparel-shop-size" href="{{ component_url }}" target="_blank" rel="noopener noreferrer" data-size-link data-shop-label="Shop {{ component_name }}" aria-disabled="true">Choose size</a></div></div>
+                {% endfor %}
+              </div>
+              {% else %}
+              <div class="apparel-sizes"><label for="apparel-size-{{ forloop.counter }}">Size</label><div class="apparel-size-control"><select id="apparel-size-{{ forloop.counter }}" class="apparel-size-select" data-product-url="{{ product.url }}" aria-label="Choose {{ product.name }} size"><option value="" selected>Choose size</option>{% for size, variant_id in product.sizes %}<option value="{{ variant_id }}">{{ size }}</option>{% endfor %}</select><a class="apparel-shop-size" href="{{ product.url }}" target="_blank" rel="noopener noreferrer" data-size-link data-shop-label="Shop item" aria-disabled="true">Choose size</a></div></div>
+              {% endif %}
+            </div>
           </article>
           {% endfor %}
         </div>
-        <p class="apparel-note">Product imagery and links are from Bombshell Sportswear. Prices are shown in USD and may change; matching set pieces are sold separately.</p>
+        <p class="apparel-note">Product images and descriptions are presented from Bombshell Sportswear. UK prices are shown in GBP and may change. “From £59” reflects the current sports-bra collection starting price; confirm each style's price and size availability with the retailer. Matching-set prices combine both pieces; sizes are selected separately.</p>
       </div>
     </section>
 
