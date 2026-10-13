@@ -22,7 +22,7 @@ class HomePageTests(TestCase):
     def test_apparel_section_covers_requested_categories_and_source(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context["apparel_products"]), 42)
+        self.assertEqual(len(response.context["apparel_products"]), 58)
         for category in ("sports-bras", "bodysuits", "leggings", "sports-tops", "matching-sets"):
             self.assertContains(response, f'data-filter="{category}"')
         self.assertContains(response, "/static/Sports-Bras/")
@@ -72,6 +72,23 @@ class HomePageTests(TestCase):
                 self.assertIsNotNone(finders.find(product["image"]))
                 self.assertContains(response, product["image"])
                 self.assertContains(response, "From £93")
+                self.assertContains(response, product["description"])
+                self.assertContains(response, product["url"])
+
+    def test_every_unique_local_bodysuit_image_has_a_product_card(self):
+        response = self.client.get("/")
+        bodysuit_edits = [
+            product
+            for product in response.context["apparel_products"]
+            if product.get("collection_only") and product["category"] == "bodysuits"
+        ]
+
+        self.assertEqual(len(bodysuit_edits), 16)
+        for product in bodysuit_edits:
+            with self.subTest(image=product["image"]):
+                self.assertIsNotNone(finders.find(product["image"]))
+                self.assertContains(response, product["image"])
+                self.assertContains(response, "From £120")
                 self.assertContains(response, product["description"])
                 self.assertContains(response, product["url"])
 

@@ -249,6 +249,42 @@ APPAREL_PRODUCTS += tuple(
     for image, name, color, description in LEGGINGS_IMAGE_EDITS
 )
 
+BODYSUITS_IMAGE_EDITS = (
+    ("bodysuit_1.webp", "Contour Bodysuit", "Warm taupe", "A sleek one-piece with sculpting seams, a softly open back and a supportive studio-ready fit."),
+    ("bodysuit_2.webp", "Co-ord Bodysuit", "Soft black", "A smooth black bodysuit with wide straps, a deep V-neckline and a tailored finish."),
+    ("bodysuit_3.webp", "Sculpt Bodysuit", "Ivory", "An elevated ivory bodysuit with contour shaping, adjustable straps and a polished silhouette."),
+    ("bodysuit_4.webp", "Lift Bodysuit", "Cherry red", "A bright red bodysuit shaped for a confident fit with easy movement and strong support."),
+    ("bodysuit_5.webp", "Open-back Bodysuit", "Electric blue", "A vivid electric blue bodysuit with clean lines and an open-back feel for dynamic training."),
+    ("bodysuit_6.webp", "Studio Bodysuit", "Midnight blue", "A deep blue bodysuit with a seamless finish that suits both strength work and recovery days."),
+    ("bodysuit_7.webp", "Contour Bodysuit", "Black", "A classic black bodysuit with a sculpting cut, smooth finish and supportive structure."),
+    ("bodysuit_8.webp", "Motion Bodysuit", "Coral", "Warm coral tones bring a relaxed confidence to this striking, flexible bodysuit."),
+    ("bodysuit_9.webp", "Halo Bodysuit", "Pink marble", "A marbled pink bodysuit with a softly structured front and a flattering, body-skimming fit."),
+    ("bodysuit_10.webp", "Form Bodysuit", "Lilac", "A lilac bodysuit with a gentle contour and a confident, easy silhouette for everyday wear."),
+    ("bodysuit_11.webp", "Shape Bodysuit", "Charcoal", "A charcoal bodysuit with a sleek finish and a clean line that pairs beautifully with layered styling."),
+    ("bodysuit_12.webp", "Gloss Bodysuit", "Navy", "A polished navy bodysuit with a sleek shine and a supportive, easy-to-move-in fit."),
+    ("bodysuit_13.webp", "Curve Bodysuit", "Rose pink", "A rose-pink bodysuit with a subtle contour and a smooth shape for confident movement."),
+    ("bodysuit_14.webp", "Studio Bodysuit", "Pale gold", "A warm gold-toned bodysuit with a modern finish and flattering strength-focused fit."),
+    ("bodysuit_15.webp", "Metro Bodysuit", "Deep charcoal", "A clean charcoal bodysuit with sculpted lines and a refined fit for everyday training."),
+    ("bodysuit_16.webp", "Suit Bodysuit", "Black", "A sharp black bodysuit that keeps the focus on movement, support and an easy premium feel."),
+)
+
+APPAREL_PRODUCTS += tuple(
+    {
+        "category": "bodysuits",
+        "category_label": "BODYSUIT EDIT",
+        "name": name,
+        "color": color,
+        "price": "From £120",
+        "description": description,
+        "image": f"Bodysuits/{image}",
+        "image_alt": f"Women's {name.lower()} in {color}, styled by Bombshell Sportswear",
+        "url": "https://www.bombshellsportswear.com/collections/bodysuits",
+        "collection_only": True,
+        "size_options": ("XXS", "XS", "S", "M", "L", "XL"),
+    }
+    for image, name, color, description in BODYSUITS_IMAGE_EDITS
+)
+
 
 def home(request):
     if request.method == "POST":
