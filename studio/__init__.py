@@ -1,0 +1,1 @@
+"""Infinite Continuum fitness studio app."""

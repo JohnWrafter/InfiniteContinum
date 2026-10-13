@@ -1,0 +1,119 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <meta name="description" content="Infinite Continuum is a neighborhood training studio for stronger, more energized everyday life. Find your people and your next good workout.">
+  <title>Infinite Continuum — Find Your Everyday Strong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'studio/site.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Infinite Continuum home"><span class="brand-icon" aria-hidden="true">∞</span><span>infinite<span class="wordmark-amp"> </span>continuum</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="#approach">Our approach</a>
+      <a href="#planner">Find your plan</a>
+      <a href="#studio">The studio</a>
+      <a href="#apparel">Apparel</a>
+    </nav>
+    <a class="nav-cta" href="#join">Come as you are <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEIGHBORHOOD MOVEMENT CLUB</span>
+        <h1 id="hero-title">Find your<br>everyday <span class="highlight-word">strong.</span></h1>
+        <p class="hero-description">A little movement can change a whole day. Come build strength, find your people, and feel more like you.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#planner">Find your rhythm <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#approach">A different kind of gym <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-note"><div class="avatar-stack" aria-hidden="true"><span>J</span><span>M</span><span>A</span><span>+</span></div><p>Your kind of people.<br><span>Right around the corner.</span></p></div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="image-frame">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85" alt="Sunlight across the weights and training floor of a neighborhood gym" fetchpriority="high">
+          <span class="image-topline"><span class="live-dot"></span> A SPACE TO SHOW UP</span>
+          <span class="image-caption">Move at<br>your own pace.</span>
+        </div>
+        <div class="orbit-stamp" aria-label="Every body belongs"><span>EVERY BODY · EVERY DAY · EVERY BODY · EVERY DAY ·</span><b aria-hidden="true">✳</b></div>
+        <div class="visual-index">EST. 2024 <span>·</span> BROOKLYN, NY</div>
+      </div>
+      <a href="#approach" class="scroll-cue" aria-label="Scroll to discover"><span></span> SCROLL TO FEEL IT</a>
+    </section>
+
+    <section class="ticker" aria-label="Our philosophy"><div class="ticker-track"><span>SHOW UP AS YOU ARE <b>✳</b> GET STRONGER TOGETHER <b>✳</b> MAKE ROOM FOR JOY <b>✳</b> SHOW UP AS YOU ARE <b>✳</b> GET STRONGER TOGETHER <b>✳</b> MAKE ROOM FOR JOY <b>✳</b></span></div></section>
+
+    <section class="approach section-wrap" id="approach" aria-labelledby="approach-title">
+      <div class="section-heading"><span class="eyebrow">01 / A BETTER KIND OF STRONG</span><span class="heading-aside">NO BEFORE PICTURES. NO PRESSURE.<br>JUST GOOD PEOPLE AND GOOD MOVEMENT.</span></div>
+      <div class="approach-grid">
+        <h2 id="approach-title">Fitness for the<br><span>life you actually live.</span></h2>
+        <div class="approach-body"><p>We think getting stronger should feel less like punishment and more like coming home to yourself. Our coaches meet you exactly where you are, then help you find out where you can go.</p><a class="arrow-link" href="#studio">A little more about us <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="values-grid">
+        <article class="value-item"><span class="value-number">01</span><span class="value-mark mark-lime" aria-hidden="true">✳</span><h3>Progress, not punishment</h3><p>Real coaching and a plan that grows with you. No guilt, no grind culture, no weird rules.</p></article>
+        <article class="value-item"><span class="value-number">02</span><span class="value-mark mark-coral" aria-hidden="true">↗</span><h3>Small group. Big energy.</h3><p>Enough space to be yourself. Enough good people to make showing up the easy part.</p></article>
+        <article class="value-item"><span class="value-number">03</span><span class="value-mark mark-blue" aria-hidden="true">◌</span><h3>Made for real life</h3><p>Flexible sessions, thoughtful programming, and room for all the things you are.</p></article>
+      </div>
+    </section>
+
+    <section class="planner" id="planner" aria-labelledby="planner-title">
+      <div class="planner-inner section-wrap">
+        <div class="section-heading planner-heading"><span class="eyebrow">02 / YOUR STARTING POINT</span><span class="heading-aside">A PLAN SHOULD FIT YOU.<br>NOT THE OTHER WAY AROUND.</span></div>
+        <div class="planner-intro"><div><h2 id="planner-title">Your week,<br><span>your way.</span></h2><p>Pick a focus. We'll sketch out a good place to begin.</p></div><div class="week-stamp" aria-hidden="true"><span>A FRESH START</span><strong>ANY<br>DAY <i>✳</i></strong></div></div>
+        <form class="plan-form" method="get" action="#planner">
+          <label class="plan-select"><span>01 <span class="label-divider">/</span> I'M HERE TO</span><select name="focus" aria-label="Choose your fitness focus">{% for key, workout in workouts.items %}<option value="{{ key }}"{% if key == selected_focus %} selected{% endif %}>{{ workout.title }}</option>{% endfor %}</select></label>
+          <label class="plan-select"><span>02 <span class="label-divider">/</span> I'VE GOT TIME FOR</span><select name="sessions" aria-label="Choose workouts per week"><option value="2"{% if sessions_per_week == 2 %} selected{% endif %}>2 days a week</option><option value="3"{% if sessions_per_week == 3 %} selected{% endif %}>3 days a week</option></select></label>
+          <button class="button button-lime" type="submit">Build my week <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="plan-result" aria-live="polite"><div class="plan-result-heading"><span class="result-kicker">A GOOD PLACE TO BEGIN</span><p>{{ selected_workout.intro }}</p></div><div class="session-grid">{% for number, title, detail, duration, day in planned_sessions %}<article class="session-card"><span class="session-day">{{ day }} <span>·</span> SESSION {{ number }}</span><h3>{{ title }}</h3><p>{{ detail }}</p><div class="session-meta"><span>{{ duration }}</span><span class="session-arrow" aria-hidden="true">↗</span></div></article>{% endfor %}</div></div>
+        <p class="plan-footnote"><span aria-hidden="true">✳</span> This is just a starting point. A real coach will help make it yours.</p>
+      </div>
+    </section>
+
+    <section class="studio section-wrap" id="studio" aria-labelledby="studio-title">
+      <div class="section-heading"><span class="eyebrow">03 / YOUR NEW FAVORITE PLACE</span><span class="heading-aside">A LITTLE SWEAT. A LOT OF HEART.<br>ALL RIGHT HERE IN THE NEIGHBORHOOD.</span></div>
+      <div class="studio-grid"><div class="studio-photo"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85" alt="Athlete taking a moment to reset between sets" loading="lazy"><span class="photo-label">TAKE YOUR TIME. YOU'RE HERE.</span></div><div class="studio-copy"><span class="studio-coordinate">40°41' N · 73°59' W</span><h2 id="studio-title">Your block.<br><span>Your people.</span></h2><p>A light-filled, low-pressure space for real humans. Towel on us, good music always, and coaches who remember your name.</p><div class="studio-facts"><div><strong>12</strong><span>people max<br>per session</span></div><div><strong>6:30</strong><span>doors open<br>weekdays</span></div><div><strong>0</strong><span>pressure to<br>be anyone else</span></div></div><a class="button button-dark" href="#join">Come see for yourself <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+
+    <section class="apparel" id="apparel" aria-labelledby="apparel-title">
+      <div class="apparel-inner section-wrap">
+        <div class="section-heading"><span class="eyebrow">04 / THE WOMEN'S TRAINING EDIT</span><span class="heading-aside">A CURATED LOOK AT BOMBSHELL SPORTSWEAR.<br>GOOD GEAR FOR YOUR KIND OF MOVEMENT.</span></div>
+        <div class="apparel-intro"><div><h2 id="apparel-title">Made to move.<br><span>Made to be yours.</span></h2><p>Supportive layers, one-piece favorites, and matching sets worth showing up for.</p></div><a class="apparel-source" href="https://www.bombshellsportswear.com/collections/all" target="_blank" rel="noopener noreferrer">SHOP BOMBSHELL SPORTSWEAR <span aria-hidden="true">↗</span></a></div>
+        <div class="apparel-filters" role="group" aria-label="Filter apparel by category">
+          <button class="apparel-filter is-active" type="button" data-filter="all" aria-pressed="true">All pieces</button>
+          {% for key, label in apparel_categories %}<button class="apparel-filter" type="button" data-filter="{{ key }}" aria-pressed="false">{{ label }}</button>{% endfor %}
+        </div>
+        <div class="apparel-grid">
+          {% for product in apparel_products %}
+          <article class="apparel-card" data-category="{{ product.category }}">
+            <a class="apparel-image-link" href="{{ product.url }}" target="_blank" rel="noopener noreferrer" aria-label="Shop {{ product.name }} at Bombshell Sportswear, opens in a new tab">
+              <img src="{{ product.image }}" alt="{{ product.image_alt }}" loading="lazy" decoding="async">
+              <span class="apparel-tag">{{ product.category_label }}</span>
+              <span class="apparel-image-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="apparel-product-info"><div><h3>{{ product.name }}</h3><p>{{ product.color }}</p>{% if product.detail %}<p class="apparel-detail">{{ product.detail }}</p>{% endif %}</div><span class="apparel-price">{{ product.price }}</span></div>
+          </article>
+          {% endfor %}
+        </div>
+        <p class="apparel-note">Product imagery and links are from Bombshell Sportswear. Prices are shown in USD and may change; matching set pieces are sold separately.</p>
+      </div>
+    </section>
+
+    <section class="join" id="join" aria-labelledby="join-title">
+      <div class="join-inner section-wrap"><div><span class="eyebrow">YOUR FIRST STEP CAN BE A SMALL ONE</span><h2 id="join-title">Curious? Come<br><span>say hello.</span></h2><p>Leave your details and we'll set up a no-pressure visit. Bring your questions. We'll put the kettle on.</p></div><div class="join-form-wrap">{% if messages %}{% for message in messages %}<p class="success-message" role="status">{{ message }}</p>{% endfor %}{% endif %}<form class="join-form" method="post" action="#join" novalidate>{% csrf_token %}<input type="hidden" name="form_type" value="join"><label for="id_name">YOUR NAME</label>{{ form.name }}{% for error in form.name.errors %}<span class="field-error">{{ error }}</span>{% endfor %}<label for="id_email">EMAIL ADDRESS</label>{{ form.email }}{% for error in form.email.errors %}<span class="field-error">{{ error }}</span>{% endfor %}<label for="id_focus">WHAT ARE YOU LOOKING FOR?</label>{{ form.focus }}{% for error in form.focus.errors %}<span class="field-error">{{ error }}</span>{% endfor %}<button class="button button-lime join-submit" type="submit">Let's get to know each other <span aria-hidden="true">↗</span></button></form><span class="form-note">NO SPAM, NO PRESSURE. JUST A FRIENDLY HELLO.</span></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="wordmark footer-wordmark" href="#top" aria-label="Infinite Continuum home"><span class="brand-icon" aria-hidden="true">∞</span><span>infinite<span class="wordmark-amp"> </span>continuum</span></a><span class="footer-signoff">MADE FOR REAL LIFE. BROOKLYN, NY.</span><a class="footer-top" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a><span class="footer-year">© 2026 INFINITE CONTINUUM</span></footer>
+  <script src="{% static 'studio/site.js' %}" defer></script>
+</body>
+</html>
