@@ -19,14 +19,19 @@ class HomePageTests(TestCase):
         self.assertContains(response, "Space to move")
         self.assertNotContains(response, "Reset and restore")
 
-    def test_apparel_section_covers_requested_categories_and_source(self):
+    def test_apparel_section_covers_categories_without_retailer_links(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.context["apparel_products"]), 58)
         for category in ("sports-bras", "bodysuits", "leggings", "sports-tops", "matching-sets"):
             self.assertContains(response, f'data-filter="{category}"')
         self.assertContains(response, "/static/Sports-Bras/")
-        self.assertContains(response, "bombshellsportswear.com")
+        self.assertNotContains(response, "bombshellsportswear.com")
+        self.assertNotContains(response, "data-product-url")
+        self.assertEqual(response.content.count(b"data-add-to-basket"), 58)
+        self.assertEqual(response.content.count(b'class="apparel-size-select"'), 60)
+        self.assertContains(response, "data-basket-toggle")
+        self.assertContains(response, "Your basket is empty.")
 
     def test_apparel_cards_use_local_images_gbp_prices_descriptions_and_sizes(self):
         response = self.client.get("/")
@@ -39,8 +44,9 @@ class HomePageTests(TestCase):
         self.assertContains(response, "UK PRICES IN GBP")
         self.assertContains(response, "Contrast trim, adjustable straps")
         self.assertContains(response, "43609887309911")
-        self.assertContains(response, "Shop Leggings")
-        self.assertContains(response, "Shop Sports bra")
+        self.assertContains(response, "Leggings size")
+        self.assertContains(response, "Sports bra size")
+        self.assertContains(response, "Add to basket")
 
     def test_every_sports_bra_image_has_a_local_product_card(self):
         response = self.client.get("/")
@@ -56,7 +62,6 @@ class HomePageTests(TestCase):
                 self.assertIsNotNone(finders.find(product["image"]))
                 self.assertContains(response, product["image"])
                 self.assertContains(response, "From £59")
-                self.assertContains(response, "data-size-mode=\"collection\"")
 
     def test_every_unique_local_leggings_image_has_a_product_card(self):
         response = self.client.get("/")
@@ -73,7 +78,6 @@ class HomePageTests(TestCase):
                 self.assertContains(response, product["image"])
                 self.assertContains(response, "From £93")
                 self.assertContains(response, product["description"])
-                self.assertContains(response, product["url"])
 
     def test_every_unique_local_bodysuit_image_has_a_product_card(self):
         response = self.client.get("/")
@@ -90,7 +94,6 @@ class HomePageTests(TestCase):
                 self.assertContains(response, product["image"])
                 self.assertContains(response, "From £120")
                 self.assertContains(response, product["description"])
-                self.assertContains(response, product["url"])
 
     def test_invalid_plan_parameters_fall_back_safely(self):
         response = self.client.get("/", {"focus": "unknown", "sessions": "99"})

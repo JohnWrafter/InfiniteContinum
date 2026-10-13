@@ -60,7 +60,6 @@ APPAREL_PRODUCTS = (
         "description": "Contrast trim, adjustable straps and V-front detail combine a bold look with supportive hold.",
         "image": "Sports-Bras/contrast-voltage-hollywood-pink.jpg",
         "image_alt": "Bombshell Sportswear Contrast Voltage Sports Bra in Hollywood Pink",
-        "url": "https://www.bombshellsportswear.com/products/contrast-voltage-sports-bra-hollywood-pink",
         "sizes": (("XS", "43609887309911"), ("S", "43609887342679"), ("M", "43609887375447"), ("L", "43609887408215"), ("XL", "43609887440983")),
     },
     {
@@ -72,7 +71,6 @@ APPAREL_PRODUCTS = (
         "description": "A backless cut, adjustable halter straps and a wide underband are made for supported movement.",
         "image": "Sports-Bras/trailblaze-hyper-violet.jpg",
         "image_alt": "Bombshell Sportswear Trailblaze Sports Bra in Hyper Violet",
-        "url": "https://www.bombshellsportswear.com/products/trailblaze-sports-bra-hyper-violet",
         "sizes": (("XS", "41648594649175"), ("S", "41648594681943"), ("M", "41648594714711"), ("L", "41648594747479"), ("XL", "41648594780247")),
     },
     {
@@ -84,7 +82,6 @@ APPAREL_PRODUCTS = (
         "description": "An open V-back, adjustable straps and a built-in bra meet a deep scoop neckline.",
         "image": "Bodysuits/flatter-neon-flame.jpg",
         "image_alt": "Bombshell Sportswear Flatter Bodysuit Shorts in Neon Flame",
-        "url": "https://www.bombshellsportswear.com/products/flatter-bodysuit-shorts-neon-flame",
         "sizes": (("XS", "43610760904791"), ("S", "43610760937559"), ("M", "43610760970327"), ("L", "43610761003095"), ("XL", "43610761035863")),
     },
     {
@@ -96,7 +93,6 @@ APPAREL_PRODUCTS = (
         "description": "A sculpting one-piece with a built-in push-up bra, adjustable straps and an open back.",
         "image": "Bodysuits/bombshell-obsidian-black.jpg",
         "image_alt": "Bombshell Sportswear Bombshell Bodysuit in Obsidian Black",
-        "url": "https://www.bombshellsportswear.com/products/bombshell-bodysuit-obsidian-black",
         "sizes": (("XXS", "42667349639255"), ("XS", "42667349672023"), ("S", "42667349704791"), ("M", "42667349737559"), ("L", "42667349770327"), ("XL", "42667349803095")),
     },
     {
@@ -108,7 +104,6 @@ APPAREL_PRODUCTS = (
         "description": "A straight-leg silhouette, curved waistband and contour seams create a streamlined fit.",
         "image": "Leggings/inline-straight-ice-queen.jpg",
         "image_alt": "Bombshell Sportswear Inline Straight Leggings in Ice Queen",
-        "url": "https://www.bombshellsportswear.com/products/inline-straight-leggings-ice-queen",
         "sizes": (("XXS", "43983769075799"), ("XS", "43983769108567"), ("S", "43983769141335"), ("M", "43983769174103"), ("L", "43983769206871"), ("XL", "43983769239639")),
     },
     {
@@ -120,7 +115,6 @@ APPAREL_PRODUCTS = (
         "description": "A convertible waistband lets you wear a deep V or fold it up for a high-rise fit.",
         "image": "Leggings/curvepro-coral-peach.jpg",
         "image_alt": "Bombshell Sportswear Curvepro Leggings in Coral Peach",
-        "url": "https://www.bombshellsportswear.com/products/curvepro-leggings-coral-peach",
         "sizes": (("XXS", "43613466787927"), ("XS", "43613466820695"), ("S", "43613466853463"), ("M", "43613466886231"), ("L", "43613466918999"), ("XL", "43613466951767")),
     },
     {
@@ -132,7 +126,6 @@ APPAREL_PRODUCTS = (
         "description": "A clean cami silhouette in soft, supportive performance fabric for training or everyday wear.",
         "image": "Sports-Tops/cinch-cami-white.jpg",
         "image_alt": "Bombshell Sportswear Cinch Cami Tank in White",
-        "url": "https://www.bombshellsportswear.com/products/cinch-cami-tank-white",
         "sizes": (("XS", "44088105402455"), ("S", "44088105435223"), ("M", "44088105467991"), ("L", "44088105500759"), ("XL", "44088105533527")),
     },
     {
@@ -144,7 +137,6 @@ APPAREL_PRODUCTS = (
         "description": "A lightweight cropped tee with a relaxed fit for warm-ups, training and easy layering.",
         "image": "Sports-Tops/muscle-muse-white.jpg",
         "image_alt": "Bombshell Sportswear Muscle Muse Tee in White",
-        "url": "https://www.bombshellsportswear.com/products/muscle-muse-tee-white",
         "sizes": (("XS", "43899720335447"), ("S", "43899720368215"), ("M", "43899720400983"), ("L", "43899720433751"), ("XL", "43899720466519")),
     },
     {
@@ -157,8 +149,8 @@ APPAREL_PRODUCTS = (
         "image": "Matching-Sets/movement-bubblegum.jpg",
         "image_alt": "Bombshell Sportswear Bubblegum Movement Leggings and matching sports bra",
         "components": (
-            ("Leggings", "https://www.bombshellsportswear.com/products/movement-leggings-bubblegum", (("XXS", "44105869623383"), ("XS", "44105869656151"), ("S", "44105869688919"), ("M", "44105869721687"), ("L", "44105869754455"), ("XL", "44105869787223"))),
-            ("Sports bra", "https://www.bombshellsportswear.com/products/resilient-sports-bra-bubblegum", (("XS", "44105874243671"), ("S", "44105874276439"), ("M", "44105874309207"), ("L", "44105874341975"), ("XL", "44105874374743"))),
+            ("Leggings", (("XXS", "44105869623383"), ("XS", "44105869656151"), ("S", "44105869688919"), ("M", "44105869721687"), ("L", "44105869754455"), ("XL", "44105869787223"))),
+            ("Sports bra", (("XS", "44105874243671"), ("S", "44105874276439"), ("M", "44105874309207"), ("L", "44105874341975"), ("XL", "44105874374743"))),
         ),
     },
     {
@@ -171,8 +163,8 @@ APPAREL_PRODUCTS = (
         "image": "Matching-Sets/movement-watermelon-punch.jpg",
         "image_alt": "Bombshell Sportswear Watermelon Punch Movement Leggings and matching sports bra",
         "components": (
-            ("Leggings", "https://www.bombshellsportswear.com/products/movement-leggings-watermelon-punch", (("XXS", "44105872572503"), ("XS", "44105872605271"), ("S", "44105872638039"), ("M", "44105872670807"), ("L", "44105872703575"), ("XL", "44105872736343"))),
-            ("Sports bra", "https://www.bombshellsportswear.com/products/resilient-sports-bra-watermelon-punch", (("XS", "44105878437975"), ("S", "44105878470743"), ("M", "44105878503511"), ("L", "44105878536279"), ("XL", "44105878569047"))),
+            ("Leggings", (("XXS", "44105872572503"), ("XS", "44105872605271"), ("S", "44105872638039"), ("M", "44105872670807"), ("L", "44105872703575"), ("XL", "44105872736343"))),
+            ("Sports bra", (("XS", "44105878437975"), ("S", "44105878470743"), ("M", "44105878503511"), ("L", "44105878536279"), ("XL", "44105878569047"))),
         ),
     },
 )
@@ -206,7 +198,6 @@ APPAREL_PRODUCTS += tuple(
         "description": description,
         "image": f"Sports-Bras/{image}",
         "image_alt": f"Women's {name.lower()} in {color}, styled by Bombshell Sportswear",
-        "url": "https://www.bombshellsportswear.com/collections/sports-bras",
         "collection_only": True,
         "size_options": ("XS", "S", "M", "L", "XL"),
     }
@@ -242,7 +233,6 @@ APPAREL_PRODUCTS += tuple(
         "description": description,
         "image": f"Leggings/{image}",
         "image_alt": f"Women's {name.lower()} in {color}, styled by Bombshell Sportswear",
-        "url": "https://www.bombshellsportswear.com/collections/leggings",
         "collection_only": True,
         "size_options": ("XXS", "XS", "S", "M", "L", "XL"),
     }
@@ -278,7 +268,6 @@ APPAREL_PRODUCTS += tuple(
         "description": description,
         "image": f"Bodysuits/{image}",
         "image_alt": f"Women's {name.lower()} in {color}, styled by Bombshell Sportswear",
-        "url": "https://www.bombshellsportswear.com/collections/bodysuits",
         "collection_only": True,
         "size_options": ("XXS", "XS", "S", "M", "L", "XL"),
     }
