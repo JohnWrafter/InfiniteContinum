@@ -1,1 +1,1 @@
-# InfiniteContinum
+# InfiniteContinuum
